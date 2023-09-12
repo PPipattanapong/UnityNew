@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         return score;
     }
 
+    public int GetKey()
+    {
+        return key;
+    }
+
     private void Start()
     {
         rb= GetComponent<Rigidbody>();
