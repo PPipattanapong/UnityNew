@@ -5,31 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 40f;
-    [SerializeField] private int score = 0;
-    [SerializeField] private int key = 0;
+    [SerializeField] private float rotationSpeed = 30f;
+    [SerializeField] private PlayerData playerData;
+    [SerializeField] private SoundLibrary soundLibrary;
+    [SerializeField] private AudioClip Clip;
 
 
     private Rigidbody rb;
 
     public void AddScore()
     {
-        score = score + 1;
+        playerData.score = playerData.score + 1;
+        AudioSource.PlayClipAtPoint(soundLibrary.CoinClip, transform.position);
+
     }
 
     public void AddKey()
     {
-        key = key + 1;
+        playerData.key = playerData.key + 1;
+        AudioSource.PlayClipAtPoint(soundLibrary.KeyClip, transform.position);
     }
 
     public int GetScore()
     { 
-        return score;
+        return playerData.score;
     }
 
     public int GetKey()
     {
-        return key;
+        return playerData.key;
     }
 
     private void Start()
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if (key == 3)
+        if (playerData.key == 3)
         {
             SceneManager.LoadScene(0);
         }

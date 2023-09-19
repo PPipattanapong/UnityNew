@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 441778066}
-  player: {fileID: 1316114560}
+  playerData: {fileID: 1316114560}
 --- !u!114 &441778066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,8 +1499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 40
-  score: 0
-  key: 0
+  playerData: {fileID: 11400000, guid: 15a67c7336875da4a8839110e4ccf04a, type: 2}
+  soundLibrary: {fileID: 11400000, guid: d865883749aafd941835b9f3dd552998, type: 2}
+  Clip: {fileID: 8300000, guid: e16626b6cc9f5944ea065c3ce98c1e38, type: 3}
 --- !u!54 &1316114561
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2216,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1962041131}
-  player: {fileID: 1316114560}
+  playerData: {fileID: 1316114560}
 --- !u!1 &2104175248
 GameObject:
   m_ObjectHideFlags: 0
