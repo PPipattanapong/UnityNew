@@ -6,7 +6,7 @@ using UnityEngine;
 public class KeyText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
-    [SerializeField] private PlayerController playerData;
+    [SerializeField] private PlayerController player;
 
     void Start()
     {
@@ -15,6 +15,6 @@ public class KeyText : MonoBehaviour
 
     void Update()
     {
-        text.text = playerData.GetKey().ToString();
+        text.text = player.GetKey().ToString();
     }
 }

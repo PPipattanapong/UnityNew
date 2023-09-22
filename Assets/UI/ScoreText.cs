@@ -6,20 +6,19 @@ using TMPro;
 public class ScoreText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
-    [SerializeField] private PlayerController playerData;
+    [SerializeField] private PlayerController player;
 
     //PlayerController player;
 
-    private void Start()
+    void Start()
     {
         //text = GetComponent<TMP_Text>();
+
         //player = GameObject.FindFirstObjectByType<PlayerController>();
-
-
     }
 
     void Update()
     {
-        text.text = playerData.GetScore().ToString();
+        text.text = player.GetScore().ToString();
     }
 }
