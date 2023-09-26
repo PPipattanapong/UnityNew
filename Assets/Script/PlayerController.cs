@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if (key == 3)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         float x = 0.0f;

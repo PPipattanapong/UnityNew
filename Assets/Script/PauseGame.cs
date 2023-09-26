@@ -7,7 +7,6 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField] private static bool GamePause = false;
     [SerializeField] private GameObject pauseUI;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
