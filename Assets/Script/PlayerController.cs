@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 40f;
+    [SerializeField] private float rotationSpeed = 25f;
     [SerializeField] private int score = 0;
     [SerializeField] private int key = 0;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if (key == 3)
+        if (key == 2)
         {
             SceneManager.LoadScene(1);
         }

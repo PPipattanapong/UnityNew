@@ -5,48 +5,56 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     [SerializeField] private int healthPoint = 2;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            healthPoint = -3;
+            animator.SetBool("death", true);
         }
-        if (healthPoint <= 0 )
-        {
-            Death();
-        }
-            
-        Debug.Log("Hit");
-    }
-    [SerializeField] private Animator animator;
-
-    void Start()
-    {
-       animator  = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
+        private void OnCollisionEnter(Collision collision)
         {
-            Attack();
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                healthPoint = -3;
+            }
+            if (healthPoint <= 0)
+            {
+                Death();
+            }
+
+            Debug.Log("Hit");
         }
-        if (Input.GetKeyDown(KeyCode.V))
+        [SerializeField] private Animator animator;
+
+        void Start()
         {
-            Death();
+            animator = GetComponent<Animator>();
         }
-        else if (Input.GetKeyDown(KeyCode.L))
+
+        void Update()
         {
-            animator.SetBool("death", false);
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                Death();
+            }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
+                animator.SetBool("death", false);
+            }
+        }
+        private void Attack()
+        {
+            animator.SetTrigger("attack");
+        }
+        private void Death()
+        {
+            animator.SetBool("death", true);
+            Destroy(gameObject);
         }
     }
-    private void Attack ()
-    {
-        animator.SetTrigger("attack");
-    }
-    private void Death()
-    {
-        animator.SetBool("death" , true);
-        Destroy(gameObject);
-    }
-}
